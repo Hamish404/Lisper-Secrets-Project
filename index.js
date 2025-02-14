@@ -18,7 +18,8 @@ app.get('/', async (req, res) => {
 
     res.render("index.ejs", { secret: secret, user: user });
   } catch (error) {
-    res.render("index.ejs", { content: JSON.stringify(error.response.data) });
+    console.log(error.response.data);
+    res.status(500);
   }
 
 });
